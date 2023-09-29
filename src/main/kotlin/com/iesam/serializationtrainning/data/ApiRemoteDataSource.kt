@@ -14,47 +14,47 @@ class ApiRemoteDataSource: ApiRepository {
     private val apiClient: ApiClient = ApiClient()
 
     override fun getAlerts(): Either<ErrorApp, AlertsApiModel> {
-        try {
+        return try {
             val response: Response<AlertsApiModel> = apiClient.apiService.getAlerts().execute()
             if (response.isSuccessful) {
-                return response.body()!!.right()
+                response.body()!!.right()
             } else {
                 throw RuntimeException()
             }
         } catch (e: IOException) {
-            return ErrorApp.InternetErrorApp.left()
+            ErrorApp.InternetErrorApp.left()
         } catch (e: Exception) {
-            return ErrorApp.UnknowErrorApp.left()
+            ErrorApp.UnknowErrorApp.left()
         }
     }
 
     override fun getAlert(): Either<ErrorApp, AlertApiModel> {
-        try {
+        return try {
             val responseCats: Response<AlertApiModel> = apiClient.apiService.getAlertById().execute()
             if (responseCats.isSuccessful) {
-                return responseCats.body()!!.right()
+                responseCats.body()!!.right()
             } else {
                 throw RuntimeException()
             }
         } catch (e: IOException) {
-            return ErrorApp.InternetErrorApp.left()
+            ErrorApp.InternetErrorApp.left()
         } catch (e: Exception) {
-            return ErrorApp.UnknowErrorApp.left()
+            ErrorApp.UnknowErrorApp.left()
         }
     }
 
     override fun getPlagues(): Either<ErrorApp, PlagueApiModel> {
-        try {
+        return try {
             val response: Response<PlagueApiModel> = apiClient.apiService.getPlague().execute()
             if (response.isSuccessful) {
-                return response.body()!!.right()
+                response.body()!!.right()
             } else {
                 throw RuntimeException()
             }
         } catch (e: IOException) {
-            return ErrorApp.InternetErrorApp.left()
+            ErrorApp.InternetErrorApp.left()
         } catch (e: Exception) {
-            return ErrorApp.UnknowErrorApp.left()
+            ErrorApp.UnknowErrorApp.left()
         }
     }
 }

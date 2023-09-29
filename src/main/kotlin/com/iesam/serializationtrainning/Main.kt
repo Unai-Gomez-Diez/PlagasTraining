@@ -10,11 +10,11 @@ import com.iesam.serializationtrainning.domain.errors.GetPlaguesUseCase
 
 fun main(){
 
-    /*fun llamada01(getPlaguesUseCase: GetPlaguesUseCase){
+    fun llamada01(getPlaguesUseCase: GetPlaguesUseCase){
         val y = getPlaguesUseCase()
         println(y)
     }
-    llamada01(getPlaguesUseCase = GetPlaguesUseCase(repository = ApiRemoteDataSource()))*/
+    llamada01(getPlaguesUseCase = GetPlaguesUseCase(repository = ApiRemoteDataSource()))
 
 
     fun llamada2(getAlertsUseCase: GetAlertsUseCase){
