@@ -15,6 +15,6 @@ interface ApiService {
     @GET("plagues/1")
     fun getAlertById(): Call<AlertApiModel>
 
-    @GET("plague")
+    @GET("plagues")
     fun getPlague(): Call<PlagueApiModel>
 }
