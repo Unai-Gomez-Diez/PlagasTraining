@@ -6,7 +6,7 @@ import com.iesam.serializationtrainning.data.AlertsApiModel
 import com.iesam.serializationtrainning.data.PlagueApiModel
 
 interface ApiRepository {
-    fun getAlerts(): Either<ErrorApp, List<AlertsApiModel>>//importante fijarse en que se devuelve
+    fun getAlerts(): Either<ErrorApp, AlertsApiModel>//importante fijarse en que se devuelve
 
     fun getAlert(): Either<ErrorApp, AlertApiModel>
 

@@ -13,9 +13,9 @@ class ApiRemoteDataSource: ApiRepository {
 
     private val apiClient: ApiClient = ApiClient()
 
-    override fun getAlerts(): Either<ErrorApp, List<AlertsApiModel>> {
+    override fun getAlerts(): Either<ErrorApp, AlertsApiModel> {
         try {
-            val response: Response<List<AlertsApiModel>> = apiClient.apiService.getAlerts().execute()
+            val response: Response<AlertsApiModel> = apiClient.apiService.getAlerts().execute()
             if (response.isSuccessful) {
                 return response.body()!!.right()
             } else {

@@ -10,7 +10,7 @@ import retrofit2.http.GET
 interface ApiService {
 
     @GET("alerts")
-    fun getAlerts(): Call<List<AlertsApiModel>>
+    fun getAlerts(): Call<AlertsApiModel>
 
     @GET("plagues/1")
     fun getAlertById(): Call<AlertApiModel>
