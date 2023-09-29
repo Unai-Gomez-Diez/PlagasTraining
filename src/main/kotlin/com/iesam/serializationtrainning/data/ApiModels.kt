@@ -19,8 +19,8 @@ data class AlertApiModel(
         @SerializedName("url_imgae") val url_imagen: String,
         @SerializedName("causal_agent") val causal_agent: String,
         @SerializedName("body") val body:String,
-        @SerializedName("imagesPlagues") val imagesPlagues: List<ImagesPlagues>,
-        @SerializedName("filesPlagues") val filesPlagues: List<FilesPlagues>)
+        @SerializedName("images") val images: List<ImagesPlagues>,
+        @SerializedName("files") val files: List<FilesPlagues>)
 
 data class ImagesPlagues(
         @SerializedName("id") val id:String,
